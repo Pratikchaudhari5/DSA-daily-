@@ -1,0 +1,26 @@
+class MyCalendar {
+    //list to store the booked intervels
+List<int> calender ;
+    public MyCalendar() {
+        //intialize the list
+        calender = new ArrayList<>();
+    }
+    
+    public boolean book(int start, int end) {
+        //check for overlap with every existing booking
+        for(int [] curr : calender){
+            if(!end<=curr[0] || start>=curr[1]);
+            return false;
+        }
+        calender.add(new int[] {start,end});
+        return true;
+    }
+}
+//TC: o(n^2)
+//SC: o(n)
+
+/**
+ * Your MyCalendar object will be instantiated and called as such:
+ * MyCalendar obj = new MyCalendar();
+ * boolean param_1 = obj.book(start,end);
+ */
