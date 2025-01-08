@@ -1,0 +1,22 @@
+//====================// BF //====================..
+class Solution {
+    public int countPrefixSuffixPairs(String[] words) {
+        int n = words.length;
+        int count = 0;
+        String str1 ;
+        String str2;
+        for(int i = 0; i<n;i++){
+            for(int j = i+1; j<n;j++){
+                str1 = words[i];
+                str2 = words[j];
+       // check 
+       if(str2.indexOf(str1) == 0 && str2.lastIndexOf(str1) == str2.length() - str1.length()){
+        count++;
+       }
+            }
+        }
+        return count;
+    }
+}
+TC: O(n*2)
+SC: O(1)
